@@ -6,13 +6,18 @@ export default class view {
     this.table = document.getElementById('table');
     this.addTodoForm = new AddTodo();
 
-    this.addTodoForm.onClick((title, description) =>
-      this.addTodo(title, description)
-    );
+    this.addTodoForm.onClick((title, description) => this.addTodo(title, description));
   }
 
   setModel(model) {
     this.model = model;
+  }
+
+  render() {
+    const todos = this.model.getTodos();
+    for (const todo of todos) {
+      this.createRow(todo)
+    }
   }
 
   addTodo(title, description) {
