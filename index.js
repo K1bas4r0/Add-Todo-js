@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const title = document.getElementById('title');
   const description = document.getElementById('description');
 
-  const alert = document.getElementById('alert');
-
+  
   let id = 1;
 
   function removeTodo(id) {
